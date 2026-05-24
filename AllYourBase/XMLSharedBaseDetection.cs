@@ -36,7 +36,7 @@ namespace AllYourBase
                             string nameAttribute = childNodes[i]?.Attributes?["Name"]?.Value;
                             if (nameAttribute != null) {
                                 if (!listXMLAttributes.Add(nameAttribute)) {
-                                    Log.Error("[" + asset.mod.Name + "]" +
+                                    Log.Warning("[" + asset.mod.Name + "]" +
                                               " can cause inheritance errors by overwriting attribute " +
                                               nameAttribute + " in file " + asset.FullFilePath);
                                 }
@@ -49,7 +49,7 @@ namespace AllYourBase
                             string itemDefName = childNodes[i]?.SelectSingleNode("defName")?.InnerText;
                             if (itemDefName != null) {
                                 if (!listDefNames.Add(childNodes[i].Name + "_" + itemDefName)) {
-                                    Log.Error("[" + asset.mod.Name + "]" +
+                                    Log.Warning("[" + asset.mod.Name + "]" +
                                               " can cause compatibility errors by overwriting " +
                                               childNodes[i].Name + " " +
                                               itemDefName + " in file " + asset.FullFilePath);
